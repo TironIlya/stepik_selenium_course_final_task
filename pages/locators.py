@@ -14,5 +14,6 @@ class BasePageLocators():
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class ProductPageLocators:
-    ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    ADD_TO_BASKET_BUTTON = (By.CLASS_NAME, "btn-add-to-basket")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
