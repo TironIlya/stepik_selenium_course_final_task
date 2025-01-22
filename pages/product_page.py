@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
+from pages.locators import ProductPageLocators
 
 
 class ProductPage(BasePage):
@@ -21,3 +22,10 @@ class ProductPage(BasePage):
         # Проверяем, что сообщение об успехе исчезает
         assert self.is_disappeared(*self.SUCCESS_MESSAGE), \
             "Success message did not disappear, but it should"
+        
+    def add_product_to_basket(self):
+        add_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
+        add_button.click()
+
+    def should_be_success_message(self):
+        assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is not presented"
